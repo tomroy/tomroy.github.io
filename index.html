@@ -213,57 +213,23 @@
 
       
         
-          <span itemprop="articleBody"><h2 id="什麼是_Hexo">什麼是 Hexo</h2><p>簡單介紹一下 Hexo ，引用 <a href="https://hexo.io/zh-tw" target="_blank" rel="external">Hexo</a> 官方網站上面的一句話</p>
+          <h2 id="什麼是_Hexo">什麼是 Hexo</h2><p>簡單介紹一下 Hexo ，引用 <a href="https://hexo.io/zh-tw">Hexo</a> 官方網站上面的一句話</p>
 <blockquote>
 <p>Hexo is a fast, simple and powerful blog framework.<br>Hexo 是一個快速、簡單且強大的網誌框架。</p>
 </blockquote>
-<p>剩下的大家可以自己點進去 <a href="https://hexo.io/zh-tw" target="_blank" rel="external">Hexo</a> 看。</p>
-<h2 id="什麼是_GitHub_Pages">什麼是 GitHub Pages</h2><p>也是引用 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> 官方網站上面的一句話</p>
+<p>剩下的大家可以自己點進去 <a href="https://hexo.io/zh-tw">Hexo</a> 看。<br>作者是台灣人喔，感覺是個肥宅XD<br>有興趣可以看一下作者<a href="http://zespia.tw/blog/2012/10/11/hexo-debut/">對 hexo 的介紹</a>。</p>
+<h2 id="什麼是_GitHub_Pages">什麼是 GitHub Pages</h2><p>也是引用 <a href="https://pages.github.com/">GitHub Pages</a> 官方網站上面的一句話</p>
 <blockquote>
-<p>Hosted directly from your GitHub repository. Just edit, push, and your changes are live.</p>
-<p>直接把你的網頁放到你的 GitHub repository ，這樣全世界就都看得到你的網頁啦。</p>
+<p>Hosted directly from your GitHub repository. Just edit, push, and your changes are live.<br>直接把你的網頁放到你的 GitHub repository ，這樣全世界就都看得到你的網頁啦。</p>
 </blockquote>
-<p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> 不止讓可以你放網站，同時還給你一組專屬的URL  http<span></span>://username.github.io，省去了不少申請DNS的麻煩呢，當然如果有自己的DNS也是可以拿來使用的。<br>設定的方式 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> 上寫得圖文並茂、淺顯易懂，就請各位自己點進去看啦。</p>
+<p><a href="https://pages.github.com/">GitHub Pages</a> 不止讓可以你放網站，同時還給你一組專屬的URL  http<span></span>://username.github.io，省去了不少申請DNS的麻煩呢，當然如果有自己的DNS也是可以拿來使用的。<br>設定的方式 <a href="https://pages.github.com/">GitHub Pages</a> 上寫得圖文並茂、淺顯易懂，就請各位自己點進去看啦。</p>
 <p>好，終於進入正題，現在開始一步一步來架我們的Blog吧。</p>
-<h2 id="安裝_Hexo">安裝 Hexo</h2><p>安裝需求<br>在安裝前您必須先檢查下列您的電腦是否已經安裝下列軟體：</p>
-<ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></li>
-<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></li>
-</ul>
-<p>如果你的電腦已經安裝上述的必備軟體，那麼只需要透過 npm 可以完成 Hexo 的安裝。若還沒安裝好請先從上面連結點進去下載吧。</p>
-<pre><code>$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo-cli</span>
-</code></pre><p>一旦 Hexo 安裝完成後，隨便切換到自己想要放blog的資料夾，執行下列指令，Hexo 就會在指定資料夾中建立所有搭建 blog 需要的檔案。</p>
-<pre><code><span class="variable">$ </span>hexo init &lt;folder&gt; <span class="comment"># 建立一個新的網站。如果沒有設定 folder 的話，Hexo 會在目前的資料夾建立網站。這裡我們把 folder 取名為 Blog</span>
-<span class="variable">$ </span>cd &lt;folder&gt;
-<span class="variable">$ </span>npm install
-</code></pre><p>建立完成後，專案資料夾會有下列檔案：</p>
-<pre><code>.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── scripts
-├── source
-<span class="string">|   ├── _drafts</span>
-<span class="string">|   └── _posts</span>
-└── themes
-</code></pre><p>每個資料夾的詳細說明再請自己點進去官方網站的<a href="https://hexo.io/docs/setup.html" target="_blank" rel="external">設定</a>裡面看囉。</p>
-<pre><code><span class="variable">$ </span>hexo g <span class="comment"># hexo generate 產生靜態檔案。</span>
-<span class="variable">$ </span>hexo s <span class="comment"># hexo server 啟動伺服器。</span>
-<span class="comment"># Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span>
-<span class="comment"># 啟動伺服器以後可以按Ctrl + C來停止。</span>
-</code></pre><p>現在我們已經建好本機端的 blog 了，用瀏覽器輸入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 或是 <a href="http://127.0.0.1:4000" target="_blank" rel="external">http://127.0.0.1:4000</a> 就可以看到你的 blog 了。</p>
-<h2 id="把_Blog_放到_GitHub_上">把 Blog 放到 GitHub 上</h2><p>請先用下面指令安裝 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a> .</p>
-<pre><code>$ npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span>
-</code></pre><p>再來先在 GitHub 上開一個 repository ，取名叫 Blog 後，將該 repository 的 HTTPS clone URL 複製後，打開本地端 Blog 中的 _config.yml ， 在  deploy: 下面，type 輸入 git，repository 就把剛剛複製的HTTPS clone URL專案路徑貼在這裡，ssh 或https都可以， branch 填 master  最後會長成像以下這個樣子</p>
-<pre><code><span class="attribute">deploy</span>:
-    <span class="attribute">type</span>: git
-    <span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:username/yourRepo.git
-    <span class="attribute">branch</span>: master
-</code></pre><p>username : 你的 GitHub 使用者名稱<br>yourRepo : 你剛剛個取的 repo 的名字<br>關於更詳細的設定請參考 <a href="https://hexo.io/docs/deployment.html#Git" target="_blank" rel="external">deploy</a> 。</p>
-<p>接下來只要再回到 console 輸入</p>
-<pre><code><span class="variable">$ </span>hexo d <span class="comment"># hexo deploy 部署網站(到GitHub上)。</span>
-</code></pre><p>這樣就可以在你的 GitHub Pages 上看到剛剛建好的 Blog 了。<br>官方給定的網址是 <a href="http://username.github.io/" target="_blank" rel="external">http://username.github.io/</a></p>
-</span>
+<h2 id="安裝_Hexo">安裝 Hexo</h2><p>安裝需求<br>在安裝前您必須先檢查下列您的電腦是否已經安裝下列軟體：
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/11/hexo-guide/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -304,7 +270,7 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-10T16:25:06+08:00" content="2015-09-10">
+          <time itemprop="dateCreated" datetime="2015-09-10T18:00:00+08:00" content="2015-09-10">
             2015-09-10
           </time>
         </span>
@@ -331,16 +297,16 @@
 
       
         
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+          <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
 <h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-</span>
+<p>More info: <a href="http://hexo.io/docs/server.html">Server</a><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/10/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -407,7 +373,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
