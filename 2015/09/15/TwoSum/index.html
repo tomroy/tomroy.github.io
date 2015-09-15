@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Algorithm,Big-O,演算法," />
+  <meta name="keywords" content="Algorithm,LeetCode,TwoSum,演算法," />
 
 
 
@@ -39,23 +39,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon-16x16.png?v=0.4.5.1" />
 
 
-<meta name="description" content="Know The Complexities!在準備面試的時候通常會花很多時間在網路上到處找各種演算法的best, worst, average case, 才不會在問到的時候掛在那邊，下面這個網站的作者 Eric 佛心來著幫大家準備了 Big-O cheat sheet，感謝他。
-Big-O Cheat Sheet
-Big-O Complexity Chart">
+<meta name="description" content="一、問題描述
+Given an array of integers, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbers such that they add up to the target,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Big-O Cheat Sheet">
-<meta property="og:url" content="http://tomroy.github.io/2015/09/15/big-o/index.html">
+<meta property="og:title" content="TwoSum">
+<meta property="og:url" content="http://tomroy.github.io/2015/09/15/TwoSum/index.html">
 <meta property="og:site_name" content="Tom.TH_Lin's blog">
-<meta property="og:description" content="Know The Complexities!在準備面試的時候通常會花很多時間在網路上到處找各種演算法的best, worst, average case, 才不會在問到的時候掛在那邊，下面這個網站的作者 Eric 佛心來著幫大家準備了 Big-O cheat sheet，感謝他。
-Big-O Cheat Sheet
-Big-O Complexity Chart">
-<meta property="og:image" content="http://tomroy.github.io/uploads/big-o-complexity.png">
-<meta property="og:updated_time" content="2015-09-15T03:51:28.000Z">
+<meta property="og:description" content="一、問題描述
+Given an array of integers, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbers such that they add up to the target,">
+<meta property="og:updated_time" content="2015-09-15T09:24:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Big-O Cheat Sheet">
-<meta name="twitter:description" content="Know The Complexities!在準備面試的時候通常會花很多時間在網路上到處找各種演算法的best, worst, average case, 才不會在問到的時候掛在那邊，下面這個網站的作者 Eric 佛心來著幫大家準備了 Big-O cheat sheet，感謝他。
-Big-O Cheat Sheet
-Big-O Complexity Chart">
+<meta name="twitter:title" content="TwoSum">
+<meta name="twitter:description" content="一、問題描述
+Given an array of integers, find two numbers such that they add up to a specific target number.
+The function twoSum should return indices of the two numbers such that they add up to the target,">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -65,7 +64,7 @@ Big-O Complexity Chart">
   };
 </script>
 
-  <title> Big-O Cheat Sheet | Tom.TH_Lin's blog </title>
+  <title> TwoSum | Tom.TH_Lin's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -189,7 +188,7 @@ Big-O Complexity Chart">
           
           
             
-              Big-O Cheat Sheet
+              TwoSum
             
           
         </h1>
@@ -198,7 +197,7 @@ Big-O Complexity Chart">
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-15T11:27:52+08:00" content="2015-09-15">
+          <time itemprop="dateCreated" datetime="2015-09-15T15:25:50+08:00" content="2015-09-15">
             2015-09-15
           </time>
         </span>
@@ -215,6 +214,18 @@ Big-O Complexity Chart">
 
               
               
+                , 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Algorithm/LeetCode/" itemprop="url" rel="index">
+                  <span itemprop="name">LeetCode</span>
+                </a>
+              </span>
+
+              
+              
 
             
           </span>
@@ -224,8 +235,8 @@ Big-O Complexity Chart">
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/15/big-o/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/15/big-o/" itemprop="commentsCount"></span>
+            <a href="/2015/09/15/TwoSum/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/15/TwoSum/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -239,9 +250,12 @@ Big-O Complexity Chart">
       
 
       
-        <span itemprop="articleBody"><h1 id="Know_The_Complexities!">Know The Complexities!</h1><p>在準備面試的時候通常會花很多時間在網路上到處找各種演算法的best, worst, average case, 才不會在問到的時候掛在那邊，下面這個網站的作者 <a href="https://twitter.com/ericdrowell" target="_blank" rel="external">Eric</a> 佛心來著幫大家準備了 Big-O cheat sheet，感謝他。</p>
-<p><a href="http://bigocheatsheet.com/" target="_blank" rel="external"><strong>Big-O Cheat Sheet</strong></a></p>
-<h2 id="Big-O_Complexity_Chart">Big-O Complexity Chart</h2><p><img src="/uploads/big-o-complexity.png" alt="Big-O Complexity Chart"><br><a id="more"></a><br>很方便的圖<br>時間複雜度誰快誰慢一目瞭然</p>
+        <span itemprop="articleBody"><h1 id="一、問題描述">一、問題描述</h1><blockquote>
+<p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
+<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
+<p>You may assume that each input would have exactly one solution.</p>
+<p><strong><code>Input:</code></strong><code>numbers={2, 7, 11, 15}, target=9&gt;</code><br><strong><code>Output:</code></strong><code>index1=1, index2=2</code></p>
+</blockquote>
 </span>
       
     </div>
@@ -252,7 +266,9 @@ Big-O Complexity Chart">
           
             <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
           
-            <a href="/tags/Big-O/" rel="tag">#Big-O</a>
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
+          
+            <a href="/tags/TwoSum/" rel="tag">#TwoSum</a>
           
             <a href="/tags/演算法/" rel="tag">#演算法</a>
           
@@ -263,13 +279,11 @@ Big-O Complexity Chart">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/15/TwoSum/" rel="prev">TwoSum</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/11/hexo-guide/" rel="next">使用Hexo在GitHub Pages上架設自己的Blog</a>
+              <a href="/2015/09/15/big-o/" rel="next">Big-O Cheat Sheet</a>
             
           </div>
         </div>
@@ -387,7 +401,7 @@ Big-O Complexity Chart">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Know_The_Complexities!"><span class="nav-number">1.</span> <span class="nav-text">Know The Complexities!</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Big-O_Complexity_Chart"><span class="nav-number">1.1.</span> <span class="nav-text">Big-O Complexity Chart</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、問題描述"><span class="nav-number">1.</span> <span class="nav-text">一、問題描述</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -441,9 +455,9 @@ Big-O Complexity Chart">
 
     <script type="text/javascript">
       var disqus_shortname = 'tomthlin';
-      var disqus_identifier = '2015/09/15/big-o/';
-      var disqus_title = 'Big-O Cheat Sheet';
-      var disqus_url = 'http://tomroy.github.io/2015/09/15/big-o/';
+      var disqus_identifier = '2015/09/15/TwoSum/';
+      var disqus_title = 'TwoSum';
+      var disqus_url = 'http://tomroy.github.io/2015/09/15/TwoSum/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
