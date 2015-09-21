@@ -249,9 +249,12 @@
 
       
         
-          <h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv">GitHub repository</a>.</p>
-<p>After lots of search on the internet, I found that there’s a <a href="https://developer.github.com/v3/markdown/#markdown">GitHub api</a> that can convert your markdown to html. So I can send my markdown file using json format to github, and it’ll return the html format to me.</p>
+          <h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv">GitHub repo</a>.</p>
+<p>After lots of search on the internet, I found that GitHub provides a <a href="https://developer.github.com/v3/markdown/#markdown">Markdown API</a> that can convert your markdown to html. So I can send my markdown file using json format to github, and it’ll return the html format to me.</p>
 <p>After I got the html, I first find all the contents in the <code>&lt;table&gt;...&lt;/table&gt;</code> tags, extract the rows in the HTML table from <code>&lt;tr&gt;</code> tag. Then get the Header cells <code>&lt;th&gt;</code> which contains the header information and Standard cells <code>&lt;td&gt;</code> which contains data<br>separate headers and data by delimiter <code>,</code>.</p>
+<p>最近由於工作上為了一些文件，有可能需要將markdown上面的表格貼到Excel上，但是總覺得用人工不是很可靠，所以想先找找看網路上有沒有人寫好工具可以用。<br>但是找了半天都只有轉成markdown的，或是把markdown轉成html之類的，並沒有轉成excel可以開的檔案。<br>剛好最近對Python有點興趣，就想說用Python來做一個吧！我也把我寫好的程式放在我的<a href="https://github.com/tomroy/mdtable2csv">GitHub repo</a>裡面了。</p>
+<p>由於並沒有直接把.md轉成.csv的工具，但是在找的過程中發現GitHub有提供一個 <a href="https://developer.github.com/v3/markdown/#markdown">Markdown API</a> 可以讓你把markdown的內容包在json裡面丟上去，他就會把它轉成html的形式，我發現滿適合的就拿來用了。<br>當拿到html之後，剩下的就是從裡面把 <code>&lt;table&gt;...&lt;/table&gt;</code> 標籤裡面的東西找出來，把每一行 <code>&lt;tr&gt;</code> 的標題 <code>&lt;th&gt;</code> 跟內容 <code>&lt;td&gt;</code> 然後用 <code>,</code> 把每個內容分開，輸出成.csv的格式就完成了！</p>
+<p>Here are some sample results of my work :<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/09/21/mdtable2csv/#more" rel="contents">
               Read more &raquo;
