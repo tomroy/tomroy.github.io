@@ -40,16 +40,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon-16x16.png?v=0.4.5.1" />
 
 
-<meta name="description" content="mdtable2csvRecently I was trying to find a easy way to convert the tables in md to excel, instead of just copy paste.After some research, I found that there are so many converters on the internet, but">
+<meta name="description" content="mdtable2csvRecently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.After some research, I found that there are so many converters on the internet, bu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mdtable2csv">
 <meta property="og:url" content="http://tomroy.github.io/2015/09/21/mdtable2csv/index.html">
 <meta property="og:site_name" content="Tom.TH_Lin's blog">
-<meta property="og:description" content="mdtable2csvRecently I was trying to find a easy way to convert the tables in md to excel, instead of just copy paste.After some research, I found that there are so many converters on the internet, but">
+<meta property="og:description" content="mdtable2csvRecently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.After some research, I found that there are so many converters on the internet, bu">
 <meta property="og:updated_time" content="2015-09-21T02:42:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mdtable2csv">
-<meta name="twitter:description" content="mdtable2csvRecently I was trying to find a easy way to convert the tables in md to excel, instead of just copy paste.After some research, I found that there are so many converters on the internet, but">
+<meta name="twitter:description" content="mdtable2csvRecently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.After some research, I found that there are so many converters on the internet, bu">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -245,7 +245,7 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find a easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv" target="_blank" rel="external">GitHub repository</a>.</p>
+        <span itemprop="articleBody"><h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv" target="_blank" rel="external">GitHub repository</a>.</p>
 <p>After lots of search on the internet, I found that there’s a <a href="https://developer.github.com/v3/markdown/#markdown" target="_blank" rel="external">GitHub api</a> that can convert your markdown to html. So I can send my markdown file using json format to github, and it’ll return the html format to me.</p>
 <p>After I got the html, I first find all the contents in the <code>&lt;table&gt;...&lt;/table&gt;</code> tags, extract the rows in the HTML table from <code>&lt;tr&gt;</code> tag. Then get the Header cells <code>&lt;th&gt;</code> which contains the header information and Standard cells <code>&lt;td&gt;</code> which contains data<br>separate headers and data by delimiter <code>,</code>.</p>
 <a id="more"></a>

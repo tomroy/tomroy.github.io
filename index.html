@@ -249,7 +249,7 @@
 
       
         
-          <h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find a easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv">GitHub repository</a>.</p>
+          <h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv">GitHub repository</a>.</p>
 <p>After lots of search on the internet, I found that there’s a <a href="https://developer.github.com/v3/markdown/#markdown">GitHub api</a> that can convert your markdown to html. So I can send my markdown file using json format to github, and it’ll return the html format to me.</p>
 <p>After I got the html, I first find all the contents in the <code>&lt;table&gt;...&lt;/table&gt;</code> tags, extract the rows in the HTML table from <code>&lt;tr&gt;</code> tag. Then get the Header cells <code>&lt;th&gt;</code> which contains the header information and Standard cells <code>&lt;td&gt;</code> which contains data<br>separate headers and data by delimiter <code>,</code>.</p>
           <div class="post-more-link text-center">
