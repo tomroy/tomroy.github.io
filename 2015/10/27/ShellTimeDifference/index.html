@@ -31,7 +31,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Bash,Shell Script," />
 
 
 
@@ -40,15 +40,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon-16x16.png?v=0.4.5.1" />
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tom.TH_Lin's blog">
-<meta property="og:url" content="http://tomroy.github.io/index.html">
+<meta name="description" content="Shell Script to Get The Time DifferenceI was trying to estimate what is the time spent for a curl command.So I made a simple shell script for this.
+Firstcreate a script name timediff.sh1$ vim timediff">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shell Script to Get The Time Difference">
+<meta property="og:url" content="http://tomroy.github.io/2015/10/27/ShellTimeDifference/index.html">
 <meta property="og:site_name" content="Tom.TH_Lin's blog">
-<meta property="og:description">
+<meta property="og:description" content="Shell Script to Get The Time DifferenceI was trying to estimate what is the time spent for a curl command.So I made a simple shell script for this.
+Firstcreate a script name timediff.sh1$ vim timediff">
+<meta property="og:updated_time" content="2015-10-27T08:56:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tom.TH_Lin's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Shell Script to Get The Time Difference">
+<meta name="twitter:description" content="Shell Script to Get The Time DifferenceI was trying to estimate what is the time spent for a curl command.So I made a simple shell script for this.
+Firstcreate a script name timediff.sh1$ vim timediff">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +62,7 @@
   };
 </script>
 
-  <title> Tom.TH_Lin's blog </title>
+  <title> Shell Script to Get The Time Difference | Tom.TH_Lin's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -85,9 +89,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -171,9 +173,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -184,9 +186,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/10/27/ShellTimeDifference/" itemprop="url">
-                Shell Script to Get The Time Difference
-              </a>
+              Shell Script to Get The Time Difference
             
           
         </h1>
@@ -236,433 +236,64 @@
       
 
       
-        
-          <span itemprop="articleBody"><h2 id="Shell_Script_to_Get_The_Time_Difference">Shell Script to Get The Time Difference</h2><p>I was trying to estimate what is the time spent for a curl command.<br>So I made a simple shell script for this.</p>
+        <span itemprop="articleBody"><h2 id="Shell_Script_to_Get_The_Time_Difference">Shell Script to Get The Time Difference</h2><p>I was trying to estimate what is the time spent for a curl command.<br>So I made a simple shell script for this.</p>
 <p><strong>First</strong><br>create a script name <code>timediff.sh</code><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim timediff.sh</span><br></pre></td></tr></table></figure></p>
 <p><strong>Second</strong><br>Append text as follows:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"==========START=========="</span></span><br><span class="line">date</span><br><span class="line">START=$(date +%s)</span><br><span class="line"><span class="comment"># Start your script work here</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"processing..."</span></span><br><span class="line"><span class="comment"># End</span></span><br><span class="line">END=$(date +%s)</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"==========END============"</span></span><br><span class="line">date</span><br><span class="line">DIFF=$(( <span class="variable">$END</span> - <span class="variable">$START</span> ))</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"It took <span class="variable">$DIFF</span> seconds."</span></span><br><span class="line">```  </span><br><span class="line">__Third__  </span><br><span class="line">Save and execute the following script:  </span><br><span class="line">```sh</span><br><span class="line">$ chmod +x timediff.sh</span><br></pre></td></tr></table></figure></p>
 <p><strong>Finally</strong><br>Execute the script:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./timediff.sh</span><br></pre></td></tr></table></figure></p>
 <p><strong>Output:</strong><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">==========START==========</span><br><span class="line">二 <span class="number">10</span>月 <span class="number">27</span> <span class="number">09</span>:<span class="number">22</span>:<span class="number">36</span> UTC <span class="number">2015</span></span><br><span class="line">processing...</span><br><span class="line">==========END==========</span><br><span class="line">二 <span class="number">10</span>月 <span class="number">27</span> <span class="number">09</span>:<span class="number">22</span>:<span class="number">36</span> UTC <span class="number">2015</span></span><br><span class="line">It took <span class="number">0</span> seconds</span><br></pre></td></tr></table></figure></p>
 </span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
+        <div class="post-tags">
           
+            <a href="/tags/Bash/" rel="tag">#Bash</a>
           
-            
-              <a class="post-title-link" href="/2015/09/21/mdtable2csv/" itemprop="url">
-                mdtable2csv
-              </a>
-            
+            <a href="/tags/Shell-Script/" rel="tag">#Shell Script</a>
           
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-09-21T10:42:37+08:00" content="2015-09-21">
-            2015-09-21
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Tools/" itemprop="url" rel="index">
-                  <span itemprop="name">Tools</span>
-                </a>
-              </span>
-
-              
-              
-                , 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Tools/tomroy/" itemprop="url" rel="index">
-                  <span itemprop="name">tomroy</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/21/mdtable2csv/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/21/mdtable2csv/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
+        </div>
       
 
       
-        
-          <h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv">GitHub repo</a>.</p>
-<p>After lots of search on the internet, I found that GitHub provides a <a href="https://developer.github.com/v3/markdown/#markdown">Markdown API</a> that can convert your markdown to html. So I can send my markdown file using json format to github, and it’ll return the html format to me.</p>
-<p>After I got the html, I first find all the contents in the <code>&lt;table&gt;...&lt;/table&gt;</code> tags, extract the rows in the HTML table from <code>&lt;tr&gt;</code> tag. Then get the Header cells <code>&lt;th&gt;</code> which contains the header information and Standard cells <code>&lt;td&gt;</code> which contains data<br>separate headers and data by delimiter <code>,</code>.</p>
-<p>最近由於工作上為了一些文件，有可能需要將markdown上面的表格貼到Excel上，但是總覺得用人工不是很可靠，所以想先找找看網路上有沒有人寫好工具可以用。<br>但是找了半天都只有轉成markdown的，或是把markdown轉成html之類的，並沒有轉成excel可以開的檔案。<br>剛好最近對Python有點興趣，就想說用Python來做一個吧！我也把我寫好的程式放在我的<a href="https://github.com/tomroy/mdtable2csv">GitHub repo</a>裡面了。</p>
-<p>由於並沒有直接把.md轉成.csv的工具，但是在找的過程中發現GitHub有提供一個 <a href="https://developer.github.com/v3/markdown/#markdown">Markdown API</a> 可以讓你把markdown的內容包在json裡面丟上去，他就會把它轉成html的形式，我發現滿適合的就拿來用了。<br>當拿到html之後，剩下的就是從裡面把 <code>&lt;table&gt;...&lt;/table&gt;</code> 標籤裡面的東西找出來，把每一行 <code>&lt;tr&gt;</code> 的標題 <code>&lt;th&gt;</code> 跟內容 <code>&lt;td&gt;</code> 然後用 <code>,</code> 把每個內容分開，輸出成.csv的格式就完成了！</p>
-<p>Here are some sample results of my work :<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/21/mdtable2csv/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
+          <div class="post-nav-next post-nav-item">
             
-              <a class="post-title-link" href="/2015/09/16/markdown-tips/" itemprop="url">
-                Markdown tips
-              </a>
+              <a href="/2015/09/21/mdtable2csv/" rel="next">mdtable2csv</a>
             
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-09-16T15:38:58+08:00" content="2015-09-16">
-            2015-09-16
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/tips/" itemprop="url" rel="index">
-                  <span itemprop="name">tips</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/16/markdown-tips/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/16/markdown-tips/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="Markdown_tips">Markdown tips</h1><hr>
-<p>半形空白(Halfwidth space) = <code>&amp;ensp;</code> 或 <code>&amp;#8194;</code><br>全形空白(Fullwidth space) = <code>&amp;emsp;</code> 或 <code>&amp;#8195;</code><br>不斷行的空白格(non-breaking space) = <code>&amp;nbsp;</code> 或 <code>&amp;#160;</code></p>
-<h2 id="半形空白(Halfwidth_space)">半形空白(Halfwidth space)</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">哈囉！這邊&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;有五個半形空白。</span><br><span class="line">Hello! We have&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5 halfwidth spaces here.</span><br></pre></td></tr></table></figure>
-<p>執行結果如下：</p>
-<blockquote>
-<p>哈囉！這邊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有五個半形空白。<br>Hello! We have&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 halfwidth spaces here.</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/16/markdown-tips/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/15/TwoSum/" itemprop="url">
-                LeetCode 1 - TwoSum
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-09-15T15:25:50+08:00" content="2015-09-15">
-            2015-09-15
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                  <span itemprop="name">Algorithm</span>
-                </a>
-              </span>
-
-              
-              
-                , 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Algorithm/LeetCode/" itemprop="url" rel="index">
-                  <span itemprop="name">LeetCode</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/15/TwoSum/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/15/TwoSum/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">https://leetcode.com/problems/two-sum/</a></p>
-<h1 id="一、問題描述">一、問題描述</h1><blockquote>
-<p>Given an array of integers, find two numbers such that they add up to a specific target number.</p>
-<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
-<p>You may assume that each input would have exactly one solution.</p>
-<p><strong><code>Input:</code></strong><code>numbers={2, 7, 11, 15}, target=9</code><br><strong><code>Output:</code></strong><code>index1=1, index2=2</code></p>
-</blockquote>
-</span>
-        
+    <div class="post-spread">
       
     </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/15/big-o/" itemprop="url">
-                Big-O Cheat Sheet
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-09-15T11:27:52+08:00" content="2015-09-15">
-            2015-09-15
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                  <span itemprop="name">Algorithm</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/15/big-o/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/15/big-o/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="Know_The_Complexities!">Know The Complexities!</h1><p>在準備面試的時候通常會花很多時間在網路上到處找各種演算法的best, worst, average case, 才不會在問到的時候掛在那邊，下面這個網站的作者 <a href="https://twitter.com/ericdrowell">Eric</a> 佛心來著幫大家準備了 Big-O cheat sheet，感謝他。</p>
-<p><a href="http://bigocheatsheet.com/"><strong>Big-O Cheat Sheet</strong></a></p>
-<h2 id="Big-O_Complexity_Chart">Big-O Complexity Chart</h2><p><img src="/uploads/big-o-complexity.png" alt="Big-O Complexity Chart"><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/15/big-o/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
-  </nav>
+  </div>
 
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
+            
+          </div>
         
       </div>
 
@@ -679,6 +310,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -737,6 +377,17 @@
       </section>
 
       
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell_Script_to_Get_The_Time_Difference"><span class="nav-number">1.</span> <span class="nav-text">Shell Script to Get The Time Difference</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
 
     </div>
   </aside>
@@ -785,9 +436,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'tomthlin';
-      var disqus_identifier = 'index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2015/10/27/ShellTimeDifference/';
+      var disqus_title = 'Shell Script to Get The Time Difference';
+      var disqus_url = 'http://tomroy.github.io/2015/10/27/ShellTimeDifference/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -798,6 +449,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
@@ -824,6 +477,165 @@
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
