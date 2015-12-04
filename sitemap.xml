@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tomroy.github.io/2015/12/04/dockerNginxPhp/</loc>
+    <lastmod>2015-12-04T08:14:52.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tomroy.github.io/2015/10/31/simpleWebServer/</loc>
     <lastmod>2015-11-03T07:22:35.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://tomroy.github.io/about/index.html</loc>
+    <loc>http://tomroy.github.io/2015/10/27/ShellTimeDifference/</loc>
     <lastmod>2015-10-27T08:56:01.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://tomroy.github.io/2015/10/27/ShellTimeDifference/</loc>
+    <loc>http://tomroy.github.io/about/index.html</loc>
     <lastmod>2015-10-27T08:56:01.000Z</lastmod>
   </url>
   
