@@ -184,6 +184,109 @@
           
           
             
+              <a class="post-title-link" href="/2015/12/14/SSH-Agent-Forwarding/" itemprop="url">
+                SSH-Agent-Forwarding
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-12-14T14:55:22+08:00" content="2015-12-14">
+            2015-12-14
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/tips/" itemprop="url" rel="index">
+                  <span itemprop="name">tips</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/12/14/SSH-Agent-Forwarding/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/14/SSH-Agent-Forwarding/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="Using_SSH_agent_forwarding">Using SSH agent forwarding</h1><p>SSH agent forwarding allows you to use your local SSH keys instead of copy and paste your keys on your server. Means that  you don’t have to worry about leaking you SSH Keys.<br>Take what I recently used for example, I was going to access the Server2 through Server1 from Local, but I don’t want to leave my SSH Key on Server1.<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">Local</span> <span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">(SSH)</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span>&gt; <span class="comment">Server1</span> <span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">(SSH)</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span>&gt; <span class="comment">Server2</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Setting_up_SSH_agent_forwarding">Setting up SSH agent forwarding</h1><p>Let’s set up SSH to allow agent forwarding to your server.</p>
+<ol>
+<li><blockquote>
+<p>Using your favorite text editor to open the file at <code>~/.ssh/config</code>. If it doesn’t exist, you can enter <code>touch ~/.ssh/config</code> in the terminal to create this file.</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>Enter the following text into the file, replacing <code>Server1</code> with your server’s domain name or IP :</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Host</span> Server1</span><br><span class="line">  ForwardAgent <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<p>Then you’re good to go!</p>
+<hr>
+<h1 id="SSH_agent_forwarding_的應用">SSH agent forwarding 的應用</h1><p>SSH agent forwarding可以讓本地的SSH Key在遠端Server上轉送，就是說當你需要透過一台遠端Server連到另一台遠端Server的時候，你不需要將你的Public Key跟Private Key複製到遠端Server上，就可以省掉手動複製的麻煩，也不用擔心SSH key會外流。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/14/SSH-Agent-Forwarding/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/12/04/dockerNginxPhp/" itemprop="url">
                 Nginx + PHP web server on docker.
               </a>
@@ -597,100 +700,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/16/markdown-tips/" itemprop="url">
-                Markdown tips
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-09-16T15:38:58+08:00" content="2015-09-16">
-            2015-09-16
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/tips/" itemprop="url" rel="index">
-                  <span itemprop="name">tips</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/16/markdown-tips/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/16/markdown-tips/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="Markdown_tips">Markdown tips</h1><hr>
-<p>半形空白(Halfwidth space) = <code>&amp;ensp;</code> 或 <code>&amp;#8194;</code><br>全形空白(Fullwidth space) = <code>&amp;emsp;</code> 或 <code>&amp;#8195;</code><br>不斷行的空白格(non-breaking space) = <code>&amp;nbsp;</code> 或 <code>&amp;#160;</code></p>
-<h2 id="半形空白(Halfwidth_space)">半形空白(Halfwidth space)</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">哈囉！這邊&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;有五個半形空白。</span><br><span class="line">Hello! We have&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5 halfwidth spaces here.</span><br></pre></td></tr></table></figure>
-<p>執行結果如下：</p>
-<blockquote>
-<p>哈囉！這邊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有五個半形空白。<br>Hello! We have&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 halfwidth spaces here.</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/16/markdown-tips/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -729,7 +738,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

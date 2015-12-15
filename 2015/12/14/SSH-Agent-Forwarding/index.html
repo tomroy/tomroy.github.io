@@ -31,7 +31,7 @@
 
 
 
-  <meta name="keywords" content="docker,nginx,php," />
+  <meta name="keywords" content="tips," />
 
 
 
@@ -40,21 +40,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon-16x16.png?v=0.4.5.1" />
 
 
-<meta name="description" content="Deploy a Nginx + PHP environment on Amazon EC2 using docker
-簡介 Docker (What is Docker?)Docker 是一個開源專案，支援多平台，從筆電到公、私有雲上能進行快速部署輕量、獨立的作業環境。Docker is an open platform for distributed applications for deve">
+<meta name="description" content="Using SSH agent forwardingSSH agent forwarding allows you to use your local SSH keys instead of copy and paste your keys on your server. Means that  you don’t have to worry about leaking you SSH Keys.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx + PHP web server on docker.">
-<meta property="og:url" content="http://tomroy.github.io/2015/12/04/dockerNginxPhp/index.html">
+<meta property="og:title" content="SSH-Agent-Forwarding">
+<meta property="og:url" content="http://tomroy.github.io/2015/12/14/SSH-Agent-Forwarding/index.html">
 <meta property="og:site_name" content="Tom.TH_Lin's blog">
-<meta property="og:description" content="Deploy a Nginx + PHP environment on Amazon EC2 using docker
-簡介 Docker (What is Docker?)Docker 是一個開源專案，支援多平台，從筆電到公、私有雲上能進行快速部署輕量、獨立的作業環境。Docker is an open platform for distributed applications for deve">
-<meta property="og:image" content="http://tomroy.github.io/uploads/large_v.png">
-<meta property="og:image" content="http://tomroy.github.io/uploads/php-welcome.png">
-<meta property="og:updated_time" content="2015-12-04T08:14:52.000Z">
+<meta property="og:description" content="Using SSH agent forwardingSSH agent forwarding allows you to use your local SSH keys instead of copy and paste your keys on your server. Means that  you don’t have to worry about leaking you SSH Keys.">
+<meta property="og:updated_time" content="2015-12-14T06:55:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx + PHP web server on docker.">
-<meta name="twitter:description" content="Deploy a Nginx + PHP environment on Amazon EC2 using docker
-簡介 Docker (What is Docker?)Docker 是一個開源專案，支援多平台，從筆電到公、私有雲上能進行快速部署輕量、獨立的作業環境。Docker is an open platform for distributed applications for deve">
+<meta name="twitter:title" content="SSH-Agent-Forwarding">
+<meta name="twitter:description" content="Using SSH agent forwardingSSH agent forwarding allows you to use your local SSH keys instead of copy and paste your keys on your server. Means that  you don’t have to worry about leaking you SSH Keys.">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -64,7 +59,7 @@
   };
 </script>
 
-  <title> Nginx + PHP web server on docker. | Tom.TH_Lin's blog </title>
+  <title> SSH-Agent-Forwarding | Tom.TH_Lin's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -188,7 +183,7 @@
           
           
             
-              Nginx + PHP web server on docker.
+              SSH-Agent-Forwarding
             
           
         </h1>
@@ -197,8 +192,8 @@
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-12-04T16:14:52+08:00" content="2015-12-04">
-            2015-12-04
+          <time itemprop="dateCreated" datetime="2015-12-14T14:55:22+08:00" content="2015-12-14">
+            2015-12-14
           </time>
         </span>
 
@@ -207,32 +202,8 @@
             &nbsp; | &nbsp; In
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/web-server/" itemprop="url" rel="index">
-                  <span itemprop="name">web server</span>
-                </a>
-              </span>
-
-              
-              
-                , 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/web-server/nginx/" itemprop="url" rel="index">
-                  <span itemprop="name">nginx</span>
-                </a>
-              </span>
-
-              
-              
-                , 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/web-server/nginx/docker/" itemprop="url" rel="index">
-                  <span itemprop="name">docker</span>
+                <a href="/categories/tips/" itemprop="url" rel="index">
+                  <span itemprop="name">tips</span>
                 </a>
               </span>
 
@@ -247,8 +218,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/12/04/dockerNginxPhp/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/04/dockerNginxPhp/" itemprop="commentsCount"></span>
+            <a href="/2015/12/14/SSH-Agent-Forwarding/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/14/SSH-Agent-Forwarding/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -262,64 +233,39 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="Deploy_a_Nginx_+_PHP_environment_on_Amazon_EC2_using_docker">Deploy a Nginx + PHP environment on Amazon EC2 using docker</h1><hr>
-<h2 id="簡介_Docker_(What_is_Docker?)">簡介 Docker (What is Docker?)</h2><p><a href="http://www.docker.com/" target="_blank" rel="external">Docker</a> 是一個開源專案，支援多平台，從筆電到公、私有雲上能進行快速部署輕量、獨立的作業環境。<br><a href="http://www.docker.com/" target="_blank" rel="external">Docker</a> is an open platform for distributed applications for developers and sysadmins.<br><img src="/uploads/large_v.png" alt="Docker img" title="Docker"></p>
-<h2 id="目的_(Content)">目的 (Content)</h2><p>主要介紹如何用 Docker 在 AWS 上部署一個 nginx + php 的環境，會提到以下幾個部分：</p>
-<ul>
-<li>在 Amazon 的 EC2 上安裝 Docker</li>
-<li>註冊及登入 Docker Hub 帳號</li>
-<li>下載 docker image 來部署環境</li>
-<li>完成</li>
-</ul>
-<p>Will focus on how to deploy an nginx + php environment using docker on amazon EC2:</p>
-<ul>
-<li>install docker on Amazon EC2</li>
-<li>Register and login to Docker Hub (Optional)</li>
-<li>deploy using docker image</li>
-<li>Done<a id="more"></a>    
-<h2 id="在_Amazon_的_EC2_上安裝_Docker_(To_install_Docker_on_an_Amazon_Linux_instance)">在 Amazon 的 EC2 上安裝 Docker (To install Docker on an Amazon Linux instance)</h2></li>
-</ul>
+        <span itemprop="articleBody"><h1 id="Using_SSH_agent_forwarding">Using SSH agent forwarding</h1><p>SSH agent forwarding allows you to use your local SSH keys instead of copy and paste your keys on your server. Means that  you don’t have to worry about leaking you SSH Keys.<br>Take what I recently used for example, I was going to access the Server2 through Server1 from Local, but I don’t want to leave my SSH Key on Server1.<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">Local</span> <span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">(SSH)</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span>&gt; <span class="comment">Server1</span> <span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">(SSH)</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span>&gt; <span class="comment">Server2</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Setting_up_SSH_agent_forwarding">Setting up SSH agent forwarding</h1><p>Let’s set up SSH to allow agent forwarding to your server.</p>
 <ol>
-<li>Connect to your instance. see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html" target="_blank" rel="external">Connect to Your Linux Instance</a>.<br>連到你的EC2 instance.</li>
-<li><p>Update the installed packages and package cache on your instance.<br>更新package</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ec2-user ~]$ sudo yum update -y</span><br></pre></td></tr></table></figure>
+<li><blockquote>
+<p>Using your favorite text editor to open the file at <code>~/.ssh/config</code>. If it doesn’t exist, you can enter <code>touch ~/.ssh/config</code> in the terminal to create this file.</p>
+</blockquote>
 </li>
-<li><p>Install Docker.<br>安裝Docker</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ec2-user ~]$ sudo yum install -y docker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Start the Docker service.<br>啟用Docker</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[ec2-user ~]$ sudo service docker start</span><br><span class="line">Starting cgconfig service:                           [  OK  ]</span><br><span class="line">Starting docker:                                     [  OK  ]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Add the <code>ec2-user</code> to the <code>docker</code> group so you can execute Docker commands without using <code>sudo</code>.<br>把<code>ec2-user</code>這個使用者加到docker的個group裡面，這樣可以不用每次用docker的時候都要打<code>sudo</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ec2-user ~]$ sudo usermod <span class="operator">-a</span> -G docker ec2-user</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Log out and log back in again to pick up the new <code>docker</code> group permissions.<br>登出再登入讓上一步的設定生效。</p>
-</li>
-<li>Verify that the <code>ec2-user</code> can run Docker commands without <code>sudo</code>.<br>用<code>docker info</code>來驗證Docker已安裝成功。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[ec2-user ~]$ docker info</span><br><span class="line">Containers: <span class="number">2</span></span><br><span class="line">Images: <span class="number">24</span></span><br><span class="line">Storage Driver: devicemapper</span><br><span class="line">Pool Name: docker-<span class="number">202</span>:<span class="number">1</span>-<span class="number">263460</span>-pool</span><br><span class="line">Pool Blocksize: <span class="number">65.54</span> kB</span><br><span class="line">Data file: /var/lib/docker/devicemapper/devicemapper/data</span><br><span class="line">Metadata file: /var/lib/docker/devicemapper/devicemapper/metadata</span><br><span class="line">Data Space Used: <span class="number">702.3</span> MB</span><br><span class="line">Data Space Total: <span class="number">107.4</span> GB</span><br><span class="line">Metadata Space Used: <span class="number">1.864</span> MB</span><br><span class="line">Metadata Space Total: <span class="number">2.147</span> GB</span><br><span class="line">Library Version: <span class="number">1.02</span>.<span class="number">89</span>-RHEL6 (<span class="number">2014</span>-<span class="number">09</span>-<span class="number">01</span>)</span><br><span class="line">Execution Driver: native-<span class="number">0.2</span></span><br><span class="line">Kernel Version: <span class="number">3.14</span>.<span class="number">27</span>-<span class="number">25.47</span>.amzn1.x86_64</span><br><span class="line">Operating System: Amazon Linux AMI <span class="number">2014.09</span></span><br></pre></td></tr></table></figure>
+<li><blockquote>
+<p>Enter the following text into the file, replacing <code>Server1</code> with your server’s domain name or IP :</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Host</span> Server1</span><br><span class="line">  ForwardAgent <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+</blockquote>
 </li>
 </ol>
-<h2 id="註冊及登入_Docker_Hub_帳號_(_Register_and_login_to_Docker_Hub_)">註冊及登入 Docker Hub 帳號 ( Register and login to Docker Hub )</h2><ul>
-<li><p>Docker Hub 上提供了許多 images 可以使用，先去註冊 Docker Hub 帳號，網址：<a href="https://hub.docker.com/account/signup/" target="_blank" rel="external">https://hub.docker.com/account/signup/</a><br>There are many images on Docker Hub. First, go to register an account on Docker Hub：<a href="https://hub.docker.com/account/signup/" target="_blank" rel="external">https://hub.docker.com/account/signup/</a></p>
+<p>Then you’re good to go!</p>
+<hr>
+<h1 id="SSH_agent_forwarding_的應用">SSH agent forwarding 的應用</h1><p>SSH agent forwarding可以讓本地的SSH Key在遠端Server上轉送，就是說當你需要透過一台遠端Server連到另一台遠端Server的時候，你不需要將你的Public Key跟Private Key複製到遠端Server上，就可以省掉手動複製的麻煩，也不用擔心SSH key會外流。<br><a id="more"></a><br>舉個我自己最近用到的例子，因為我要SSH進Server1，然後透過Server1去連到Server2，但是因為Server1上沒有我的SSH Key，我就沒辦法連到，這時候就可以用SSH agent forwarding了，就會在登入Server2的時候自動使用你本地端的SSH Key去連。<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">Local</span> <span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">(SSH)</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span>&gt; <span class="comment">Server1</span> <span class="literal">-</span><span class="literal">-</span><span class="literal">-</span><span class="comment">(SSH)</span><span class="literal">-</span><span class="literal">-</span><span class="literal">-</span>&gt; <span class="comment">Server2</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="設定_SSH_agent_forwarding">設定 SSH agent forwarding</h1><p>那SSH agent forwarding到底要怎麼設定呢？</p>
+<ol>
+<li><blockquote>
+<p>首先用你常用的文字編輯器打開<code>~/.ssh/config</code>.如果你的<code>~/.ssh</code>裡面沒有config這個檔案的話，你可以用<code>touch~/.ssh/config</code>這個指令來新增檔案。</p>
+</blockquote>
 </li>
-<li><p>接著可以用 <code>docker login</code> 來登入 Docker Hub :<br>Use <code>docker login</code> to login Docker Hub : </p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker login</span><br><span class="line">Username: [ENTER YOUR USERNAME]</span><br><span class="line">Password: [ENTER YOUR PASSWORD]</span><br><span class="line">Email: [ENTER YOUR EMAIL]</span><br><span class="line">Login Succeeded</span><br></pre></td></tr></table></figure>
+<li><blockquote>
+<p>把下面的文字複製到config裡，把Server1改成你Server1的domain name或IP：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Host</span> Server1</span><br><span class="line">  ForwardAgent <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+</blockquote>
 </li>
+</ol>
+<p>這樣你就可以直接透過Server1去連Server2啦！</p>
+<h1 id="Reference">Reference</h1><ul>
+<li><a href="https://developer.github.com/guides/using-ssh-agent-forwarding/" target="_blank" rel="external">Using SSH agent forwarding</a></li>
+<li><a href="https://ihower.tw/blog/archives/7837" target="_blank" rel="external">SSH agent forwarding 的應用</a></li>
 </ul>
-<h2 id="下載_docker_image_來部署環境_(pull_docker_image_to_deploy)">下載 docker image 來部署環境 (pull docker image to deploy)</h2><ol>
-<li><p>先把我建立的 image 抓從我的Docker Hub抓下來<br>First pull the docker image I created from Docker Hub.</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull tomroy/nginx-php-fpm-vim:<span class="number">80</span>port</span><br></pre></td></tr></table></figure>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">80</span>port: Pulling from tomroy/nginx-php-fpm-vim</span><br><span class="line"><span class="number">2</span>eaf0096818b: Pull complete</span><br><span class="line">...</span><br><span class="line">Digest:sha256:eed24a5da74cf411684c796d82900cfa682f89c97504b8372c7489ac124c6e46</span><br><span class="line">Status: Image is up to date <span class="keyword">for</span> tomroy/nginx-php-fpm-vim:<span class="number">80</span>port</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用剛剛抓下來的 image 建立一個 container 並執行裡面的 /sbin/my_init<br>Run a container using the image we just pulled and run the /sbin/my_init script in that image.</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker run <span class="operator">-d</span> -p <span class="number">8080</span>:<span class="number">80</span> --name docker-host tomroy/nginx-php-fpm-vim: /sbin/my_init</span><br><span class="line"><span class="number">91646</span>c7285a66ad4a2206a6a8b99d1f789661a110ae30faacdea53ea41<span class="built_in">fc</span>4aa0</span><br></pre></td></tr></table></figure>
-<p> <strong>/sbin/my_init </strong>: </p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/usr/bin/env bash</span></span><br><span class="line">service php5-fpm start</span><br><span class="line">nginx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用<code>docekr ps</code>來檢查 container 是否已經成功啟動<br>Use <code>docker ps</code> to check if the container is  running.</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker ps</span></span><br><span class="line">CONTAINER ID        IMAGE                             COMMAND             CREATED             STATUS              PORTS                                     NAMES</span><br><span class="line"><span class="number">91646</span>c7285a6        tomroy/nginx-php-fpm-vim:<span class="number">80</span>port   <span class="string">"/sbin/my_init"</span>     About an hour ago   Up About an hour    <span class="number">443</span>/tcp, <span class="number">8080</span>/tcp, <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">8080</span>-&gt;<span class="number">80</span>/tcp   docker-host</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="完成_(Done)">完成 (Done)</h2><p>現在可以直接連到你host的8080 port, <code>http://&lt;docker_host&gt;:8080</code>就可以看到php default的網頁了。<br>You can then browse to http://<docker_host>:8080 to view the default install files.<br><img src="/uploads/php-welcome.png" alt="php-welcome"></docker_host></p>
 </span>
       
     </div>
@@ -328,11 +274,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/docker/" rel="tag">#docker</a>
-          
-            <a href="/tags/nginx/" rel="tag">#nginx</a>
-          
-            <a href="/tags/php/" rel="tag">#php</a>
+            <a href="/tags/tips/" rel="tag">#tips</a>
           
         </div>
       
@@ -341,13 +283,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/14/SSH-Agent-Forwarding/" rel="prev">SSH-Agent-Forwarding</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/31/simpleWebServer/" rel="next">Simple web server by Nginx + PHP-FPM</a>
+              <a href="/2015/12/04/dockerNginxPhp/" rel="next">Nginx + PHP web server on docker.</a>
             
           </div>
         </div>
@@ -465,7 +405,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploy_a_Nginx_+_PHP_environment_on_Amazon_EC2_using_docker"><span class="nav-number">1.</span> <span class="nav-text">Deploy a Nginx + PHP environment on Amazon EC2 using docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#簡介_Docker_(What_is_Docker?)"><span class="nav-number">1.1.</span> <span class="nav-text">簡介 Docker (What is Docker?)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目的_(Content)"><span class="nav-number">1.2.</span> <span class="nav-text">目的 (Content)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在_Amazon_的_EC2_上安裝_Docker_(To_install_Docker_on_an_Amazon_Linux_instance)"><span class="nav-number">1.3.</span> <span class="nav-text">在 Amazon 的 EC2 上安裝 Docker (To install Docker on an Amazon Linux instance)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#註冊及登入_Docker_Hub_帳號_(_Register_and_login_to_Docker_Hub_)"><span class="nav-number">1.4.</span> <span class="nav-text">註冊及登入 Docker Hub 帳號 ( Register and login to Docker Hub )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下載_docker_image_來部署環境_(pull_docker_image_to_deploy)"><span class="nav-number">1.5.</span> <span class="nav-text">下載 docker image 來部署環境 (pull docker image to deploy)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成_(Done)"><span class="nav-number">1.6.</span> <span class="nav-text">完成 (Done)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Using_SSH_agent_forwarding"><span class="nav-number">1.</span> <span class="nav-text">Using SSH agent forwarding</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Setting_up_SSH_agent_forwarding"><span class="nav-number">2.</span> <span class="nav-text">Setting up SSH agent forwarding</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH_agent_forwarding_的應用"><span class="nav-number">3.</span> <span class="nav-text">SSH agent forwarding 的應用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#設定_SSH_agent_forwarding"><span class="nav-number">4.</span> <span class="nav-text">設定 SSH agent forwarding</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -519,9 +459,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'tomthlin';
-      var disqus_identifier = '2015/12/04/dockerNginxPhp/';
-      var disqus_title = 'Nginx + PHP web server on docker.';
-      var disqus_url = 'http://tomroy.github.io/2015/12/04/dockerNginxPhp/';
+      var disqus_identifier = '2015/12/14/SSH-Agent-Forwarding/';
+      var disqus_title = 'SSH-Agent-Forwarding';
+      var disqus_url = 'http://tomroy.github.io/2015/12/14/SSH-Agent-Forwarding/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
