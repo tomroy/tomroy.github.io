@@ -184,6 +184,111 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/21/mdtable2csv/" itemprop="url">
+                mdtable2csv
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-09-21T10:42:37+08:00" content="2015-09-21">
+            2015-09-21
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Tools/" itemprop="url" rel="index">
+                  <span itemprop="name">Tools</span>
+                </a>
+              </span>
+
+              
+              
+                , 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Tools/tomroy/" itemprop="url" rel="index">
+                  <span itemprop="name">tomroy</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/09/21/mdtable2csv/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/21/mdtable2csv/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="mdtable2csv">mdtable2csv</h1><p>Recently I was trying to find an easy way to convert the tables in md to excel, instead of just copy paste.<br>After some research, I found that there are so many converters on the internet, but none of them can convert markdown file to excel. So I guess I have to make one on my own. And I was just happen to be learning Python, so I decided to write a Python! I also put it in my <a href="https://github.com/tomroy/mdtable2csv">GitHub repo</a>.</p>
+<p>After lots of search on the internet, I found that GitHub provides a <a href="https://developer.github.com/v3/markdown/#markdown">Markdown API</a> that can convert your markdown to html. So I can send my markdown file using json format to github, and it’ll return the html format to me.</p>
+<p>After I got the html, I first find all the contents in the <code>&lt;table&gt;...&lt;/table&gt;</code> tags, extract the rows in the HTML table from <code>&lt;tr&gt;</code> tag. Then get the Header cells <code>&lt;th&gt;</code> which contains the header information and Standard cells <code>&lt;td&gt;</code> which contains data<br>separate headers and data by delimiter <code>,</code>.</p>
+<p>最近由於工作上為了一些文件，有可能需要將markdown上面的表格貼到Excel上，但是總覺得用人工不是很可靠，所以想先找找看網路上有沒有人寫好工具可以用。<br>但是找了半天都只有轉成markdown的，或是把markdown轉成html之類的，並沒有轉成excel可以開的檔案。<br>剛好最近對Python有點興趣，就想說用Python來做一個吧！我也把我寫好的程式放在我的<a href="https://github.com/tomroy/mdtable2csv">GitHub repo</a>裡面了。</p>
+<p>由於並沒有直接把.md轉成.csv的工具，但是在找的過程中發現GitHub有提供一個 <a href="https://developer.github.com/v3/markdown/#markdown">Markdown API</a> 可以讓你把markdown的內容包在json裡面丟上去，他就會把它轉成html的形式，我發現滿適合的就拿來用了。<br>當拿到html之後，剩下的就是從裡面把 <code>&lt;table&gt;...&lt;/table&gt;</code> 標籤裡面的東西找出來，把每一行 <code>&lt;tr&gt;</code> 的標題 <code>&lt;th&gt;</code> 跟內容 <code>&lt;td&gt;</code> 然後用 <code>,</code> 把每個內容分開，輸出成.csv的格式就完成了！</p>
+<p>Here are some sample results of my work :<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/09/21/mdtable2csv/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/16/markdown-tips/" itemprop="url">
                 Markdown tips
               </a>
@@ -558,88 +663,11 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/10/hello-world/" itemprop="url">
-                Hello World
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-09-10T18:00:00+08:00" content="2015-09-10">
-            2015-09-10
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/10/hello-world/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/10/hello-world/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html">Server</a><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/10/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
   </nav>
 
  </div>
@@ -673,21 +701,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -730,8 +758,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright" >
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>

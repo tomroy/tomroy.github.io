@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tomroy.github.io/2016/02/23/A-good-git-model-practice/</loc>
+    <lastmod>2016-02-23T08:49:33.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://tomroy.github.io/2015/12/14/SSH-Agent-Forwarding/</loc>
     <lastmod>2015-12-14T06:55:22.000Z</lastmod>
   </url>
